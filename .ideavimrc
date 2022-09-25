@@ -1,0 +1,129 @@
+" mappings
+"===================================
+set relativenumber
+set number
+set ignorecase
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set cursorline
+"===================================
+let g:mapleader=","
+
+" save and exit
+nnoremap <leader>z :wqa <cr>
+nnoremap <space>s :wa <cr>
+nnoremap <space>0 :q! <cr>
+
+" move and tabs
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <space>v :bn <cr>
+nnoremap \ 0
+vmap \ 0
+nnoremap 0 $
+vmap 0 $
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+nnoremap <space>w :vsp <cr>
+nnoremap <space>i :split <cr>
+vnoremap < <gv
+vnoremap > >gv
+nnoremap + {
+nnoremap - }
+vnoremap + {
+vnoremap - }
+
+inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
+
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+
+map <leader>te :tabedit<cr>
+map <leader>td :tabclose<cr>
+map <leader>tm :tabm<cr>
+
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tablast<cr>
+
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+noremap <left> :bp<CR>
+noremap <right> :bn<CR>
+
+" yank
+nnoremap Y y$
+nnoremap yt 0y$
+vnoremap <C-c> "+y
+
+" change all words
+nnoremap gc :%s/
+
+
+nnoremap gò gg=GGG
+vnoremap < <gv
+vnoremap > >gv
+nnoremap gp `[v`]
+"===================================
+" which-key
+"===================================
+
+set which-key
+
+" disable the timeout option
+set notimeout
+
+" increase the timeoutlen (default: 1000)
+set timeoutlen = 5000
+
+" make the popup show up 'instantly'
+let g:WhichKey_DefaultDelay = 0
+
+let g:WhichKeyDesc_commentray_prefix = "cu"
+let g:WhichKeyDesc_commentray_action = "cc"
+
+let g:WhichKeyDesc_windows        = "<Space>w  Windows"
+let g:WhichKeyDesc_windows_delete = "<Space>wd delete"
+let g:WhichKeyDesc_windows_split  = "<Space>w split below"
+
+source ~/.intellimacs/spacemacs.vim
+
+" (Optional) Enable other Intellimacs modules
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+" (Optional) Enable which-key plugin
+source ~/.intellimacs/which-key.vim
+
+" (Optional) My own vim commands
+" nnoremap Y y$
+
+" (Optional) Comma for major mode
+nmap , <leader>m
+vmap , <leader>m
+
+" (Optional) Add/edit actions
+nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+vnoremap <leader>gl    :action Vcs.Show.Log<CR>
+
